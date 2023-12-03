@@ -39,7 +39,7 @@ process_zip() {
     fi
     
     # Prepare the DAT files for processing
-    python3 ready_dat_files.py "$tempdir"
+    python3 ./tools/ready_dat_files.py "$tempdir"
     
     if [ $? -ne 0 ]; then
         echo "Failed to prepare .DAT files for processing"
