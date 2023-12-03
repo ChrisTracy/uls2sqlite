@@ -19,5 +19,5 @@ for url in $(cat "$url_file"); do
 done
 
 # Process Zip Files after all downloads are completed
-../process_zip_files.sh
+./process_zip_files.sh
 
