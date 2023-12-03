@@ -14,8 +14,7 @@ for url in $(cat "$url_file"); do
     # Download the file to the archives sub-directory using curl
     curl -s -S -L --progress-bar "$url" -o "./archives/$filename"
 
-    # Sleep for a random time between 30 seconds and 120 seconds (2 minutes)
-    sleep $((30 + RANDOM % 91))
+
 done
 
 # Process Zip Files after all downloads are completed
