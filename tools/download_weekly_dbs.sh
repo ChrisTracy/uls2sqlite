@@ -17,4 +17,7 @@ for url in $(cat weekly_db_urls.txt); do
 
     # Sleep for a random time between 30 seconds and 120 seconds (2 minutes)
     sleep $((30 + RANDOM % 91))
+
+./process_zip_files.sh
+
 done
