@@ -72,10 +72,10 @@ mkdir -p databases
 
 if $USE_PARALLEL; then
     # Use GNU Parallel to process ZIP files in parallel
-    ls ./archives/*.zip | parallel process_zip
+    ls /app/archives/*.zip | parallel process_zip
 else
     # Sequential processing
-    for zipfile in ./archives/*.zip; do
+    for zipfile in /app/archives/*.zip; do
         process_zip "$zipfile"
     done
 fi
