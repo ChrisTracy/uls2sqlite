@@ -39,7 +39,7 @@ process_zip() {
     fi
     
     # Prepare the DAT files for processing
-    python3 ./tools/ready_dat_files.py "$tempdir"
+    python3 ready_dat_files.py "$tempdir"
     
     if [ $? -ne 0 ]; then
         echo "Failed to prepare .DAT files for processing"
@@ -52,7 +52,7 @@ process_zip() {
     done
 
     # Move the .sqlite file to the databases directory
-    mv "$tempdir"/*.sqlite ../databases/
+    mv "$tempdir"/*.sqlite /databases/
 
     # Remove the temporary directory
     rm -r "$tempdir"
@@ -62,7 +62,7 @@ export -f process_dat
 export -f process_zip
 
 # Ensure the databases directory exists
-mkdir -p ../databases
+mkdir -p databases
 
 #
 # If using GNU Parallel, it will spawn a "job" per available CPU core.
@@ -72,10 +72,10 @@ mkdir -p ../databases
 
 if $USE_PARALLEL; then
     # Use GNU Parallel to process ZIP files in parallel
-    ls ../archives/*.zip | parallel process_zip
+    ls ./archives/*.zip | parallel process_zip
 else
     # Sequential processing
-    for zipfile in ..//archives/*.zip; do
+    for zipfile in ./archives/*.zip; do
         process_zip "$zipfile"
     done
 fi
