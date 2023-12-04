@@ -79,3 +79,5 @@ else
         process_zip "$zipfile"
     done
 fi
+
+./swap_db.sh
