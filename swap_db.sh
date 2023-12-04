@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the path to the folder
-folder_path="./downloads"
+folder_path="./databases"
 
 # Get today's date in the format YYYY-MM-DD
 today_date=$(date +"%Y-%m-%d")
