@@ -36,6 +36,7 @@ process_zip() {
     if [ $? -ne 0 ]; then
         echo "Failed to extract from $zipfile"
         return
+        exit 1
     fi
     
     # Prepare the DAT files for processing
@@ -44,6 +45,7 @@ process_zip() {
     if [ $? -ne 0 ]; then
         echo "Failed to prepare .DAT files for processing"
         return
+        exit 1
     fi
 
     # Process .DAT files sequentially
