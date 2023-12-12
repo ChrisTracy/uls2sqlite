@@ -30,11 +30,8 @@ if [ -n "$random_sqlite" ] && [ "$(stat -c%s "$random_sqlite")" -ge 700000000 ];
     # Move the renamed db.sqlite to archive
     mv "$folder_path/$today_date.sqlite" "$archive_folder/"
     echo "Renamed db.sqlite moved to archive as $today_date.sqlite."
+    exit 0
 else
     echo "Error: No valid random sqlite file found or its size is less than 700MB."
     exit 1
-fi
-
-echo "Files renamed successfully."
-
 fi
